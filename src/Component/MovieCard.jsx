@@ -5,9 +5,9 @@ class MovieCard extends Component {
     render() {
         return (
             <div>
-                <Link to={`/Display/${this.props.movieData.Plot}`}>
+                {/* <Link to={`/Display/${this.props.movieData.Title}`}>*/}
                     <h1>{this.props.movieData.Title}</h1>
-                </Link>
+                {/* </Link>  */}
             </div>
         );
     }

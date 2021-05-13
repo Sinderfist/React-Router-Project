@@ -44,7 +44,7 @@ class MovieSearch extends Component {
                     <input type="text" value={this.state.userInput} onChange={this.handleChange} />
                     <button type='submit'>Search</button> 
                 </form>
-                <MovieCard MovieData={this.state.data} />
+                <MovieCard movieData={this.state.data} />
             </div>
         );
     }
