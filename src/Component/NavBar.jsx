@@ -4,8 +4,8 @@ function NavBar() {
     return (
         <div>
             <nav>
-               <Link to='/'>Home</Link>
-               <Link></Link>
+               {/* <Link to='/'>Home</Link>
+               <Link></Link> */}
             </nav>
         </div>
     );
