@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieCard from './MovieCard';
 
 class MovieSearch extends Component {
     constructor() {
@@ -20,15 +21,16 @@ class MovieSearch extends Component {
         console.log("submitting")
         const query = this.state.userInput
         //  variable for our url to live in
-        const url = `http://www.omdbapi.com/?i=tt3896198&apikey=cd86fe34${query}`
+        const url = `http://www.omdbapi.com/?i=tt3896198&apikey=cd86fe34&t=${query}`;
+
         // use await to tell our function to wait for data
         try {
             const response = await fetch(url);
             const data = await response.json();
             console.log(data)
-            // this.setState({
-                
-            // })
+            this.setState({
+                data: data
+            })
         }
         catch (err) {
             console.log(err)
@@ -40,8 +42,9 @@ class MovieSearch extends Component {
             <div>
                 <form onSubmit={this.searchMovies}>
                     <input type="text" value={this.state.userInput} onChange={this.handleChange} />
-                    <button type='submit'>Search</button>
+                    <button type='submit'>Search</button> 
                 </form>
+                <MovieCard MovieData={this.state.data} />
             </div>
         );
     }

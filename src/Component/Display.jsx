@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import MovieSearch from './MovieSearch';
+import React from 'react';
 
-class Display extends Component {
-    render() {
-        return (
-            <div>
-                <h1>This is the Home Page</h1>
-                <MovieSearch />
-            </div>
-        );
-    }
+function Display(match) {
+    return (
+        <div>
+            <h1>Welcome to my scuffed Movie Search App!</h1>
+                <h1>{match.params.info}</h1>
+        </div>
+    );
 }
 
 export default Display;
